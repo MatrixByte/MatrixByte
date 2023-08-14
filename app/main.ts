@@ -8,7 +8,7 @@ const router = new Router();
 
 router.get("/", async (ctx, next) => {
     try {
-        const resp_text = await Deno.readTextFile("README.md");
+        const resp_text = await Deno.readTextFile(`${Deno.cwd()}/README.md`);
         ctx.response.body = resp_text;
     } catch (error) {
         console.error(error.message);
