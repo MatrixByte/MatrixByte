@@ -1,0 +1,8 @@
+@font-face {
+    font-family: "Cera Pro";
+    src: url("/static/fonts/Cera Pro/Cera Pro.woff2");
+}
+
+body {
+    font-family: "Cera Pro";
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrix byte</title>
+    <link rel="stylesheet" href="/static/css/index.css">
+</head>
+
+<body>
+    <div id="content"></div>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            fetch("/readme").then(res => res.text()).then(text => {
+                document.getElementById("content").innerHTML =
+                    marked.parse(text);
+            });
+        });
+    </script>
+</body>
+
+</html>
