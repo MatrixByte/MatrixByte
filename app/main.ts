@@ -12,7 +12,7 @@ app.use(router.allowedMethods());
 router.get("/", async (ctx, next) => {
     try {
         await ctx.send({
-            root: `${Deno.cwd()}/app/static/`,
+            root: `${Deno.cwd()}/static/`,
             index: "index.html",
         });
     } catch (error) {
@@ -25,7 +25,7 @@ router.get("/static/:file*", async (ctx, next) => {
     const filename = ctx.params["file"];
     try {
         await ctx.send({
-            root: `${Deno.cwd()}/app/static/`,
+            root: `${Deno.cwd()}/static/`,
             path: filename,
         });
     } catch (error) {
